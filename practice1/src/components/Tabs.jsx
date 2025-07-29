@@ -1,11 +1,17 @@
-import React from 'react'
+import React from "react";
+
+import { useState } from "react";
+
+import { TabsContext } from './TabsContext';
 
 const Tabs = ({ children }) => {
-  return (
-    <div className="tabs"> 
-      {children}
-    </div>
-  )
-}
+  const [activeTab, setActiveTab] = useState(null);
 
-export default Tabs
+  return (
+    <TabsContext.Provider value={{ activeTab, setActiveTab }}>
+      <div className="tabs">{children}</div>
+    </TabsContext.Provider>
+  );
+};
+
+export default Tabs;

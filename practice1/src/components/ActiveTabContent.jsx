@@ -1,9 +1,8 @@
-import React from 'react'
+import React from "react";
 
 const ActiveTabContent = () => {
-  return (
-    <div id="active_tab_content"></div>
-  )
-}
 
-export default ActiveTabContent
+  return <div id="active_tab_content"></div>;
+};
+
+export default ActiveTabContent;

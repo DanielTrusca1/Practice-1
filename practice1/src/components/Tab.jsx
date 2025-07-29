@@ -1,26 +1,29 @@
-import React from "react";
+import React, { act, useEffect } from "react";
 
 import ReactDOM from "react-dom";
 
 import { useState } from "react";
 
-const Tab = ({
-  initiallyActive = false,
-  index,
-  title,
-  children,
-  activeTab,
-  setActiveTab,
-}) => {
+import { useTabs } from "./TabsContext";
+
+const Tab = ({ initiallyActive = false, index, title, children }) => {
+  useEffect(() => {
+    if (initiallyActive) {
+      setPortalContent(children);
+      setActiveTab(index);
+    }
+  }, []);
+
+  const { activeTab, setActiveTab } = useTabs();
+
   const [portalContent, setPortalContent] = useState(null);
+
+  console.log(activeTab, index);
 
   const portal_root = document.getElementById("active_tab_content");
 
   const updateActiveTab = () => {
-    console.log("Activate tab");
-    const content = children;
-    console.log(content);
-    setPortalContent(content);
+    setPortalContent(children);
     setActiveTab(index);
   };
 
@@ -36,7 +39,7 @@ const Tab = ({
     >
       <h1>{title}</h1>
       {portal_root &&
-        (activeTab == index || (initiallyActive && activeTab == null)) &&
+        activeTab == index &&
         ReactDOM.createPortal(portalContent, portal_root)}
     </div>
   );
