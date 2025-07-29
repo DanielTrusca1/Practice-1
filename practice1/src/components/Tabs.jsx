@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Tabs = () => {
+const Tabs = ({ children }) => {
   return (
-    <div>Tabs</div>
+    <div className="tabs"> 
+      {children}
+    </div>
   )
 }
 

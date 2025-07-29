@@ -1,8 +1,10 @@
 import React from 'react'
 
-const TabsContainer = () => {
+const TabsContainer = ({ children }) => {
   return (
-    <div>TabsContainer</div>
+    <div className="tabs_container">
+      {children}
+    </div>
   )
 }
 
