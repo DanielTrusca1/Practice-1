@@ -41,3 +41,9 @@
 .tab h1 {
     margin: 0;
 }
+.active_tab {
+    background-color: rgb(200, 255, 200);
+}
+#active_tab_content h1{
+    color: red;
+}

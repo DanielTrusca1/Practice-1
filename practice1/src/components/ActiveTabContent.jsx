@@ -2,7 +2,7 @@ import React from 'react'
 
 const ActiveTabContent = () => {
   return (
-    <div>ActiveTabContent</div>
+    <div id="active_tab_content"></div>
   )
 }
 
