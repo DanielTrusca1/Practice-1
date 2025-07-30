@@ -14,12 +14,12 @@ import {
   LoggedCC,
 } from "./reusable_logs/main.jsx";
 
-import InputForm from "./language_module/InputForm"
+import InputForm from "./language_module/InputForm";
 
 function App() {
-
   return (
     <div className="App">
+      {" "}
       <Tabs>
         <TabsContainer>
           <Tab title={"tab 1"}>
@@ -37,16 +37,13 @@ function App() {
         </TabsContainer>
         <ActiveTabContent />
       </Tabs>
-
       <AF />
       <BF />
       <CF />
       <LoggedAC />
       <LoggedBC />
       <LoggedCC />
-
-      <InputForm/>
-      
+      <InputForm />
     </div>
   );
 }
