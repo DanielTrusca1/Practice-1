@@ -2,36 +2,39 @@ import React, { act, useEffect } from "react";
 
 import ReactDOM from "react-dom";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 import { useTabs } from "./TabsContext";
 
-const Tab = ({ initiallyActive = false, index, title, children }) => {
+const Tab = ({ initiallyActive = false, title, children }) => {
+  const { activeTab, setActiveTab } = useTabs();
+  const [portalContent, setPortalContent] = useState(null);
+  const portal_root = document.getElementById("active_tab_content");
+
+  // Create a reference to the current <Tab> component
+  const ref = useRef(null);
+
+  // Set initially active tab
   useEffect(() => {
     if (initiallyActive) {
       setPortalContent(children);
-      setActiveTab(index);
+      setActiveTab(ref.current);
     }
   }, []);
 
-  const { activeTab, setActiveTab } = useTabs();
-
-  const [portalContent, setPortalContent] = useState(null);
-
-  console.log(activeTab, index);
-
-  const portal_root = document.getElementById("active_tab_content");
-
   const updateActiveTab = () => {
     setPortalContent(children);
-    setActiveTab(index);
+
+    // Set active tab state to the actual <Tab> component
+    setActiveTab(ref.current);
   };
 
   return (
     <div
+      ref={ref}
       className={
         "tab " +
-        (activeTab == index || (initiallyActive && activeTab == null)
+        (activeTab == ref.current || (initiallyActive && activeTab == null)
           ? "active_tab"
           : "")
       }
@@ -39,7 +42,7 @@ const Tab = ({ initiallyActive = false, index, title, children }) => {
     >
       <h1>{title}</h1>
       {portal_root &&
-        activeTab == index &&
+        activeTab == ref.current &&
         ReactDOM.createPortal(portalContent, portal_root)}
     </div>
   );

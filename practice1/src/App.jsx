@@ -19,16 +19,16 @@ function App() {
         <TabsContainer>
           {isReady && (
             <>
-              <Tab index={1} title={"tab 1"}>
+              <Tab title={"tab 1"}>
                 <h1>content 1</h1>
               </Tab>
-              <Tab index={2} title={"tab 2"} initiallyActive>
+              <Tab title={"tab 2"} initiallyActive>
                 <h1>content 2</h1>
               </Tab>
-              <Tab index={3} title={"tab 3"}>
+              <Tab title={"tab 3"}>
                 <h1>content 3</h1>
               </Tab>
-              <Tab index={4} title={"tab 4"}>
+              <Tab title={"tab 4"}>
                 <h1>content 4</h1>
               </Tab>
             </>
