@@ -14,6 +14,8 @@ const Tab = ({ initiallyActive = false, title, children }) => {
   // Create a reference to the current <Tab> component
   const ref = useRef(null);
 
+  const isActiveTab = activeTab == ref.current;
+
   // Set initially active tab
   useEffect(() => {
     if (initiallyActive) {
@@ -34,7 +36,7 @@ const Tab = ({ initiallyActive = false, title, children }) => {
       ref={ref}
       className={
         "tab " +
-        (activeTab == ref.current || (initiallyActive && activeTab == null)
+        (isActiveTab || (initiallyActive && activeTab == null)
           ? "active_tab"
           : "")
       }
@@ -42,7 +44,7 @@ const Tab = ({ initiallyActive = false, title, children }) => {
     >
       <h1>{title}</h1>
       {portal_root &&
-        activeTab == ref.current &&
+        isActiveTab &&
         ReactDOM.createPortal(portalContent, portal_root)}
     </div>
   );
