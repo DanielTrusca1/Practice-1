@@ -10,14 +10,14 @@ const InputForm = () => {
       <h1>
         Languages
       </h1>
-      <input type="text" placeholder="Name"/>
-      <input type="text" placeholder="Number"/>
+      <input type="text" placeholder="Name" onChange={(e) => setName(e.target.value)}/>
+      <input type="text" placeholder="Number" onChange={(e) => setNumber(e.target.value)}/>
 
       <p>
-        Hello, My name is {name}
+        Hello, My name is <span>{name}</span>
       </p>
       <p>
-        I have {number} apples
+        I have <span>{number}</span> apples
       </p>
     </div>
   )
