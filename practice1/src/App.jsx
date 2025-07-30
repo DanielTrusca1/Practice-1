@@ -2,6 +2,8 @@ import { Tabs, Tab, TabsContainer, ActiveTabContent } from "./components";
 
 import "./App.css";
 
+import { AF, AC, BC, CC } from "./reusable_logs/main.jsx";
+
 function App() {
   return (
     <div className="App">
@@ -22,6 +24,11 @@ function App() {
         </TabsContainer>
         <ActiveTabContent />
       </Tabs>
+
+      <AF />
+      <AC />
+      <BC />
+      <CC />
     </div>
   );
 }
