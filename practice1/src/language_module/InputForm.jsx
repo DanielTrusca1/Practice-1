@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 
-import { FormattedMessage, FormattedNumber } from "react-intl";
+import { FormattedMessage, FormattedDate, FormattedNumber } from "react-intl";
 
 const InputForm = () => {
   const [name, setName] = useState(null);
   const [number, setNumber] = useState(null);
 
-  const messages = {
-    en: messages_en,
-    fr: messages_fr,
-  };
+  const today = new Date();
 
   return (
     <div className="input-form">
@@ -25,11 +22,42 @@ const InputForm = () => {
         onChange={(e) => setNumber(e.target.value)}
       />
 
+      <h1>
+        <FormattedMessage id="app.title" defaultMessage="Welcome to our site" />
+      </h1>
+
       <p>
-        I have <span>{number}</span> apples
+        <FormattedMessage
+          id="app.greeting"
+          values={{ name: name }}
+          defaultMessage="Hello, {name}!"
+        />
       </p>
 
-      <FormattedMessage id="app.greeting" defaultMessage="Hello!" />
+      <p>
+        <FormattedMessage
+          id="app.description"
+          defaultMessage="This is a simple multilingual app."
+        />
+      </p>
+
+      <hr />
+
+      <p>
+        <FormattedMessage
+          id="app.date"
+          values={{ ts: today }}
+          defaultMessage="Today's date is {ts, date, long}"
+        />
+      </p>
+
+      <p>
+        <FormattedMessage
+          id="app.messages"
+          values={{ count: number }}
+          defaultMessage="{count, plural, one {You have 1 message} other {You have # messages}}"
+        />
+      </p>
     </div>
   );
 };
