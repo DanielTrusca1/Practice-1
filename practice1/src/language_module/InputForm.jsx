@@ -5,6 +5,7 @@ import { FormattedMessage, FormattedDate, FormattedNumber } from "react-intl";
 const InputForm = () => {
   const [name, setName] = useState(null);
   const [number, setNumber] = useState(null);
+  const [status, setStatus] = useState("online");
 
   const today = new Date();
 
@@ -22,9 +23,17 @@ const InputForm = () => {
         onChange={(e) => setNumber(e.target.value)}
       />
 
-      <h1>
-        <FormattedMessage id="app.title" defaultMessage="Welcome to our site" />
-      </h1>
+      <select
+        id="status-select"
+        value={status}
+        onChange={(e) => setStatus(e.target.value)}
+        style={{ marginTop: "0.5rem", padding: "0.5rem" }}
+      >
+        <option value="online">Online</option>
+        <option value="offline">Offline</option>
+        <option value="busy">Busy</option>
+        <option value="unknown">Unknown</option>
+      </select>
 
       <p>
         <FormattedMessage
@@ -56,6 +65,14 @@ const InputForm = () => {
           id="app.messages"
           values={{ count: number }}
           defaultMessage="{count, plural, one {You have 1 message} other {You have # messages}}"
+        />
+      </p>
+
+      <p>
+        <FormattedMessage
+          id="app.status"
+          values={{ status }}
+          defaultMessage="{status, select, online {You are online} offline {You are offline} busy {You are busy} other {Status unknown}}"
         />
       </p>
     </div>
