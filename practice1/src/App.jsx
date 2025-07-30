@@ -2,7 +2,15 @@ import { Tabs, Tab, TabsContainer, ActiveTabContent } from "./components";
 
 import "./App.css";
 
-import { AF, AC, BC, CC } from "./reusable_logs/main.jsx";
+import {
+  AF,
+  AC,
+  BC,
+  CC,
+  LoggedAC,
+  LoggedBC,
+  LoggedCC,
+} from "./reusable_logs/main.jsx";
 
 function App() {
   return (
@@ -25,10 +33,9 @@ function App() {
         <ActiveTabContent />
       </Tabs>
 
-      <AF />
-      <AC />
-      <BC />
-      <CC />
+      <LoggedAC/>
+      <LoggedBC/>
+      <LoggedCC/>
     </div>
   );
 }
