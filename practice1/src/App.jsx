@@ -14,6 +14,8 @@ import {
   LoggedCC,
 } from "./reusable_logs/main.jsx";
 
+import InputForm from "./language_module/InputForm"
+
 function App() {
 
   return (
@@ -42,6 +44,8 @@ function App() {
       <LoggedAC />
       <LoggedBC />
       <LoggedCC />
+
+      <InputForm/>
       
     </div>
   );
