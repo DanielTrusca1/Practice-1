@@ -36,7 +36,7 @@ const Tab = ({ initiallyActive = false, title, children }) => {
       ref={ref}
       className={
         "tab " +
-        (isActiveTab || (initiallyActive && activeTab == null)
+        (isActiveTab
           ? "active_tab"
           : "")
       }
