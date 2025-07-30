@@ -4,6 +4,8 @@ import "./App.css";
 
 import {
   AF,
+  BF,
+  CF,
   AC,
   BC,
   CC,
@@ -13,6 +15,7 @@ import {
 } from "./reusable_logs/main.jsx";
 
 function App() {
+
   return (
     <div className="App">
       <Tabs>
@@ -33,9 +36,13 @@ function App() {
         <ActiveTabContent />
       </Tabs>
 
-      <LoggedAC/>
-      <LoggedBC/>
-      <LoggedCC/>
+      <AF />
+      <BF />
+      <CF />
+      <LoggedAC />
+      <LoggedBC />
+      <LoggedCC />
+      
     </div>
   );
 }
