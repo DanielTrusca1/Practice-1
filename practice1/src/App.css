@@ -49,7 +49,7 @@
 }
 .input-form {
     width: 60vw;
-    height: 30vh;
+    height: 40vh;
     position: relative;
     left: 20vw; 
     top: 30vh;
@@ -70,4 +70,11 @@
     padding-left: 20px;
     font-size: 1.25rem;
     border: 2px solid rgb(255, 180, 180);
+}
+.input-form span {
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: rgb(39, 227, 39);
 }
