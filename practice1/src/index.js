@@ -11,7 +11,7 @@ import fr from "./translations/fr.json";
 const messages = { en, fr };
 const language = navigator.language.split(/[-_]/)[0];
 const locale = messages[language] ? language : "en";
-console.log(locale)
+console.log(locale);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
