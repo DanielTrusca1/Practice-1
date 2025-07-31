@@ -1,7 +1,0 @@
-{
-  "app.date": "Today's date is {ts, date, long}",
-  "app.description": "This is a simple multilingual app.",
-  "app.greeting": "Hello, {name}!",
-  "app.messages": "{count, plural, one {You have 1 message} other {You have # messages}}",
-  "app.status": "{status, select, online {You are online} offline {You are offline} busy {You are busy} other {Status unknown}}"
-}
