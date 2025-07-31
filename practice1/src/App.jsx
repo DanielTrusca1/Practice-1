@@ -15,6 +15,7 @@ import {
 } from "./reusable_logs/main.jsx";
 
 import InputForm from "./language_module/InputForm";
+import Button from "./styled-components/Button.jsx";
 
 function App() {
   return (
@@ -44,6 +45,11 @@ function App() {
       <LoggedBC />
       <LoggedCC />
       <InputForm />
+
+      
+      <div className="styled-components-sandbox">
+        <Button>Click me</Button>
+      </div>
     </div>
   );
 }
