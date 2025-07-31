@@ -85,3 +85,9 @@
     border: 1px solid rgb(0, 0, 255);
     border-radius: 10px;
 }
+.styled-components-sandbox {
+    position: relative;
+    left: 20vw; 
+    top: 30vh;
+    padding-bottom: 10vh;
+}
