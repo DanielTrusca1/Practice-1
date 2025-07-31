@@ -15,7 +15,7 @@ import {
 } from "./reusable_logs/main.jsx";
 
 import InputForm from "./language_module/InputForm";
-import Button from "./styled-components/Button.jsx";
+import { Button, GreenButton } from "./styled-components/Button.jsx";
 
 function App() {
   return (
@@ -45,10 +45,12 @@ function App() {
       <LoggedBC />
       <LoggedCC />
       <InputForm />
-
-      
       <div className="styled-components-sandbox">
-        <Button>Click me</Button>
+        <Button variant="primary">Click me</Button>
+        <Button variant="secondary">Click me</Button>
+        <Button variant="danger">Click me</Button>
+
+        <GreenButton>Custom Button</GreenButton>
       </div>
     </div>
   );
