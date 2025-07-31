@@ -20,7 +20,7 @@ import { Button, GreenButton } from "./styled-components/Button.jsx";
 import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./styled-components/theme.js";
-
+import OrangeDiv from "./styled-components/OrangeDiv.jsx";
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -68,6 +68,14 @@ function App() {
           <Button $variant="danger">Click me</Button>
 
           <GreenButton>Custom Button</GreenButton>
+
+          <OrangeDiv>
+            <Button $variant="primary">Click me</Button>
+            <Button $variant="secondary">Click me</Button>
+            <Button $variant="danger">Click me</Button>
+
+            <GreenButton>Custom Button</GreenButton>
+          </OrangeDiv>
         </div>
       </ThemeProvider>
     </div>
