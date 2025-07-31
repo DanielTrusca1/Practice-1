@@ -1,3 +1,4 @@
+// Create variant props styles for: primary(default), secondary, danger based on theme
 export const lightTheme = {
   colors: {
     primary: '#007bff',

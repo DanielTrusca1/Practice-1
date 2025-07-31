@@ -1,24 +1,12 @@
 import styled from "styled-components";
 
-// Create variant props styles for: primary(default), secondary, danger
-const variantStyles = {
-  primary: {
-    background: "#007bff",
-    hover: "#0056b3",
-  },
-  secondary: {
-    background: "#6c757d",
-    hover: "#5a6268",
-  },
-  danger: {
-    background: "#dc3545",
-    hover: "#b52a37",
-  },
+const getColor = (theme, variant, type = "normal") => {
+  const key = variant + (type === "hover" ? "Hover" : "");
+  return theme.colors[key] || theme.colors.primary;
 };
 
 export const Button = styled.button`
-  background-color: ${({ variant }) =>
-    variantStyles[variant]?.background || variantStyles.primary.background};
+  background-color: ${({ theme, $variant }) => getColor(theme, $variant)};
   color: white;
   width: 160px;
   height: 55px;
@@ -30,10 +18,15 @@ export const Button = styled.button`
   margin: 15px;
 
   &:hover {
-    background-color: ${({ variant }) =>
-      variantStyles[variant]?.hover || variantStyles.primary.hover};
+    background-color: ${({ theme, $variant }) =>
+      getColor(theme, $variant, "hover")};
   }
 `;
+
+// Define transient props
+Button.defaultProps = {
+  $variant: 'primary',
+};
 
 export const GreenButton = styled(Button)`
   background-color: rgb(0, 255, 0);
