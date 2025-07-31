@@ -91,3 +91,15 @@
     top: 30vh;
     padding-bottom: 10vh;
 }
+.styled-components-sandbox label {
+    width: 10vw;
+    display: flex;
+    flex: row;
+    align-items: center;
+    justify-content: center;
+}
+.styled-components-sandbox input[type="checkbox"] {
+    width: 32px;
+    height: 32px;
+    margin-right: 1vw;
+}
