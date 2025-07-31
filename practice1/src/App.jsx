@@ -17,7 +17,11 @@ import {
 import InputForm from "./language_module/InputForm";
 import { Button, GreenButton } from "./styled-components/Button.jsx";
 
+import { useState } from "react";
+
 function App() {
+  const [darkMode, setDarkMode] = useState(false);
+
   return (
     <div className="App">
       {" "}
@@ -46,6 +50,15 @@ function App() {
       <LoggedCC />
       <InputForm />
       <div className="styled-components-sandbox">
+        <label>
+          <input
+            type="checkbox"
+            checked={darkMode}
+            onChange={() => setDarkMode(!darkMode)}
+          />
+          <p>Dark Mode</p>
+        </label>
+
         <Button variant="primary">Click me</Button>
         <Button variant="secondary">Click me</Button>
         <Button variant="danger">Click me</Button>
